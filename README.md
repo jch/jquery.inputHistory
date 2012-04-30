@@ -1,27 +1,34 @@
 # jQuery Input History
 
-jQuery plugin to make an input field act like a command prompt with history
-and keyboard shortcuts.
+jQuery plugin to make an input field act like a command prompt with
+history and keyboard shortcuts.
 
-See [demo]()
+See the [demo site](http://jch.github.com/jquery.inputHistory/) for
+examples and documentation.
 
-## Documentation
+## License
 
-```js
-$('input').inputHistory(options);
-```
+Copyright (c) 2012, Jerry Cheung
+All rights reserved.
 
-where `options` is an object with any of the following optional properties
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
 
-**size** number of lines of history to remember.
+Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.  Redistributions
+in binary form must reproduce the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or
+other materials provided with the distribution.
 
-**store** number keyCode to listen for to store a line, or a function.
-  The function will be called with a keydown event and should return true
-  when the input value should be stored in the history.
-  default: enter && !shift
-
-**prev** keyCode or function to return last input.
-
-**next** keyCode or function to return next input.
-
-**data** name of data field to store input history object. default: inputHistory
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
