@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jquery.inputHistory by jch</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>jquery.inputHistory</h1>
+        <p>jQuery plugin to make an input field act like a command prompt with history and keyboard shortcuts</p>
+        <p class="view"><a href="https://github.com/jch/jquery.inputHistory">View the Project on GitHub <small>jch/jquery.inputHistory</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jch/jquery.inputHistory/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jch/jquery.inputHistory/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jch/jquery.inputHistory">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>jQuery InputHistory</h3>
+
+<p>jQuery plugin to make an input field act like a command prompt with history
+and keyboard shortcuts.</p>
+
+<h3>Demo</h3>
+
+<h3>Documentation</h3>
+
+<div class="highlight">
+<pre><span class="nx">$</span><span class="p">(</span><span class="s1">'input'</span><span class="p">).</span><span class="nx">inputHistory</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<p>where <code>options</code> is an object with any of the following optional properties</p>
+
+<p><strong>size</strong> number of lines of history to remember.</p>
+
+<p><strong>store</strong> number keyCode to listen for to store a line, or a function.
+  The function will be called with a keydown event and should return true
+  when the input value should be stored in the history.
+  default: enter &amp;&amp; !shift</p>
+
+<p><strong>prev</strong> keyCode or function to return last input.</p>
+
+<p><strong>next</strong> keyCode or function to return next input.</p>
+
+<p><strong>data</strong> name of data field to store input history object. default: inputHistory</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/jch">jch</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
