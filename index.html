@@ -32,6 +32,46 @@ and keyboard shortcuts.</p>
 
 <h3>Demo</h3>
 
+<p>
+  Try typing things into the input field, entering to submit, and
+  using the arrow keys or control-p and control-n to scroll back in
+  the input history.
+</p>
+
+
+<pre>
+$('#input-history').inputHistory({
+  size: 5
+});
+</pre>
+
+
+<input id="input-history" type="text" style="width: 200px; margin-bottom: 2em">
+</input>
+
+<ul id="history"></ul>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type='text/javascript' src="https://raw.github.com/jch/jquery.inputHistory/master/jquery.inputHistory.js"></script>
+<script type='text/javascript'>
+  $('#input-history').inputHistory({
+    size: 5
+  });
+
+  $('#input-history').bind('keydown', function(e) {
+    if (e.keyCode == 13) {
+      $(this).val('');
+      var messages = $(this).data('inputHistory').values;
+      $('#history').html('');
+      for(var i=0; i<messages.length; i++) {
+        $("<li>").text(messages[i]).appendTo('#history');
+      }
+    }
+  })
+</script>
+
+
 <h3>Documentation</h3>
 
 <div class="highlight">
