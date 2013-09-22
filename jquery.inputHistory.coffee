@@ -3,13 +3,15 @@
     constructor: (options)->
       @size   = options.size or 50
       @useLatest = options.useLatest or false
+      @ignoreEmpty = options.ignoreEmpty or false
       @values = []
       @index  = 0
 
     push: (message)->
       @moving = false
-      @values.unshift(message)
-      @values.splice(@size)
+      unless (@ignoreEmpty and message.length == 0)
+        @values.unshift(message)
+        @values.splice(@size)
 
     prev: ->
       if (@useLatest and not @moving) or @index > @size-1
@@ -46,15 +48,15 @@
 
     # enter without shift key
     options.store = normalizeKeyHandler options.store, (e)->
-      e.keyCode == 13 && !e.shiftKey
+      e.keyCode == 13 and !e.shiftKey
 
     # up, alt-p
     options.prev = normalizeKeyHandler options.prev, (e)->
-      e.keyCode == 38 or (e.ctrlKey && e.keyCode == 80)
+      e.keyCode == 38 or (e.ctrlKey and e.keyCode == 80)
 
     # down, alt-n
     options.next = normalizeKeyHandler options.next, (e)->
-      e.keyCode == 40 or (e.ctrlKey && e.keyCode == 78)
+      e.keyCode == 40 or (e.ctrlKey and e.keyCode == 78)
 
     history = @data(options.data) or new InputHistory(options)
     @data options.data, history

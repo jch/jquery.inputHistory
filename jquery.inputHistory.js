@@ -5,14 +5,17 @@
       function InputHistory(options) {
         this.size = options.size || 50;
         this.useLatest = options.useLatest || false;
+        this.ignoreEmpty = options.ignoreEmpty || false;
         this.values = [];
         this.index = 0;
       }
 
       InputHistory.prototype.push = function(message) {
         this.moving = false;
-        this.values.unshift(message);
-        return this.values.splice(this.size);
+        if (!(this.ignoreEmpty && message.length === 0)) {
+          this.values.unshift(message);
+          return this.values.splice(this.size);
+        }
       };
 
       InputHistory.prototype.prev = function() {
