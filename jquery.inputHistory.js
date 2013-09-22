@@ -1,34 +1,34 @@
 (function() {
-
   (function($) {
     var InputHistory, normalizeKeyHandler;
     InputHistory = (function() {
-
-      InputHistory.name = 'InputHistory';
-
       function InputHistory(options) {
         this.size = options.size || 50;
+        this.useLatest = options.useLatest || false;
         this.values = [];
         this.index = 0;
       }
 
       InputHistory.prototype.push = function(message) {
+        this.moving = false;
         this.values.unshift(message);
         return this.values.splice(this.size);
       };
 
       InputHistory.prototype.prev = function() {
         var message;
-        if (this.index > this.size - 1) {
+        if ((this.useLatest && !this.moving) || this.index > this.size - 1) {
           this.index = 0;
         }
         message = this.values[this.index];
         this.index += 1;
+        this.moving = true;
         return message;
       };
 
       InputHistory.prototype.next = function() {
         this.index -= 1;
+        this.moving = true;
         if (this.index < 0) {
           this.index = 0;
           return "";
